@@ -2,23 +2,13 @@
 from datetime import datetime
 
 import pandas as pd
-from pandas import concat, DataFrame
 import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
 import numpy as np
 import keras
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, LSTM, BatchNormalization
-from keras.preprocessing.text import Tokenizer
 from keras.callbacks import ModelCheckpoint
-from keras import optimizers
-
-import tensorflow as tf
-
 from sklearn.preprocessing import PolynomialFeatures
-from sklearn.preprocessing import Normalizer
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
 
 from prepare_data_for_modal import prepare_data, series_to_supervised, split_sequence
 
