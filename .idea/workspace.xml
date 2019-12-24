@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="221df71d-b043-4141-afe1-580406386ee5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/predit_result" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readMe.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rnn_simple_train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/stock_predict.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stock_predict.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Preprocessing_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark_modal.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2_baseline_weights.best.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:20:16.206267/events.out.tfevents.1577157617.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:20:56.087356/events.out.tfevents.1577157656.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:21:20.938635/events.out.tfevents.1577157681.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:23:19.031754/events.out.tfevents.1577157801.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:29:34.307871/events.out.tfevents.1577158176.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:31:40.882526/events.out.tfevents.1577158302.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:34:11.383938/events.out.tfevents.1577158453.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:35:29.639295/events.out.tfevents.1577158530.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:36:05.567343/events.out.tfevents.1577158566.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:36:53.822719/events.out.tfevents.1577158614.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:40:00.344031/events.out.tfevents.1577158801.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:46:16.891085/events.out.tfevents.1577159178.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/benchmark_12019-12-24 11:46:34.345942/events.out.tfevents.1577159195.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/stock_01_baseline2019-12-24 11:55:33.835805/events.out.tfevents.1577159742.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/stock_01_baseline2019-12-24 11:59:37.968284/events.out.tfevents.1577159983.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/stock_01_baseline2019-12-24 12:00:37.382203/events.out.tfevents.1577160042.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/stock_01_baseline2019-12-24 12:02:44.847643/events.out.tfevents.1577160170.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/stock_01_baseline2019-12-24 12:13:00.621937/events.out.tfevents.1577160786.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/stock_01_baseline2019-12-24 14:03:17.797103/events.out.tfevents.1577167410.JIMMYJI-MB2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modal_backup.py" beforeDir="false" afterPath="$PROJECT_DIR$/modal_backup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rnn_modal.py" beforeDir="false" afterPath="$PROJECT_DIR$/rnn_framed_train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
