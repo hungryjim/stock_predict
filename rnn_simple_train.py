@@ -21,27 +21,41 @@ def model_base(stock_num):
     stock = poly.fit_transform(stock)
 
     # Split the data into train and test data¶
-    train_x = np.hstack([stock[:400], news[:400]])
-    # train_x = split_sequence(train_x, 7)
+    train_x = np.hstack([stock[:407], news[:407]])
+    train_x = split_sequence(train_x, 7)
     # y就是要被预测的价格
     train_y = pre_stock_data.iloc[1:407, 9:].values
     train_y = series_to_supervised(train_y, 6, 1)
 
-    test_x = np.hstack([stock[400:], news[400:]])
-    # test_x = split_sequence(test_x, 7)
+    test_x = np.hstack([stock[393:], news[393:]])
+    test_x = split_sequence(test_x, 7)
 
     test_y = pre_stock_data.iloc[400:, 9:].values
 
     # reshape the data acording to the lstm
-    train_x = train_x.reshape(-1, 1, 7)
-    test_x = test_x.reshape(-1, 1, 7)
+    train_x = train_x.reshape(-1, 7, 7)
+    test_x = test_x.reshape(-1, 7, 7)
+    # train_x = np.hstack([stock[:400], news[:400]])
+    # # train_x = split_sequence(train_x, 7)
+    # # y就是要被预测的价格
+    # train_y = pre_stock_data.iloc[1:407, 9:].values
+    # train_y = series_to_supervised(train_y, 6, 1)
+
+    # test_x = np.hstack([stock[400:], news[400:]])
+    # # test_x = split_sequence(test_x, 7)
+
+    # test_y = pre_stock_data.iloc[400:, 9:].values
+
+    # # reshape the data acording to the lstm
+    # train_x = train_x.reshape(-1, 1, 7)
+    # test_x = test_x.reshape(-1, 1, 7)
 
     # Made on the basis of assumption made on data analysis
     # make model
     model = Sequential()
     # layer 1
-    model.add(LSTM(128, input_shape=(1, train_x.shape[2:][0]), activation='relu', return_sequences=True))
-    model.add(Dropout(0.2))  # 全连接相关，尝试丢掉一些输出
+    model.add(LSTM(128, input_shape=(7, train_x.shape[2:][0]), activation='relu', return_sequences=True))
+    model.add(Dropout(0.2))  #
     model.add(BatchNormalization())
     # layer 2
     model.add(LSTM(128, return_sequences=True))
@@ -52,7 +66,7 @@ def model_base(stock_num):
     model.add(Dropout(0.2))
     model.add(BatchNormalization())
     # layer 4
-    model.add(Dense(100, activation='relu'))
+    model.add(Dense(200, activation='relu'))
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
     # layer 5
@@ -65,31 +79,30 @@ def model_base(stock_num):
     model.add(BatchNormalization())
     # final output in 1
     model.add(Dense(7))
-
     # make optimiser
-    opt = keras.optimizers.RMSprop(lr=0.0001, rho=0.9, decay=0.0)
+    opt = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, decay=0.0)
     # compile the model
     model.compile(optimizer=opt, loss='mean_squared_error', metrics=['accuracy'])
 
     # to log the data for tensorboard
     time = datetime.now()
-    tbCallBack = keras.callbacks.TensorBoard(log_dir='./log/stock_'+stock_num+'_baseline' + str(time), write_graph=True)
+    tbCallBack = keras.callbacks.TensorBoard(log_dir='./log/stock_' + stock_num + '_baseline' + str(time),
+                                             write_graph=True)
 
     # for the model checkpoints
-    filepath = './log/stock'+stock_num+'_baseline_weights.best.hdf5'
+    filepath = './log/stock' + stock_num + '_baseline_weights.best.hdf5'
     checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
     callbacks_list = [checkpoint, tbCallBack]
     model.summary()
     return model, callbacks_list, train_x, train_y, pre_stock_data, test_x, test_y
-
 
 def Simple_train_model(stock_num):
     model, callbacks_list, train_x, train_y, pre_stock_data, test_x, test_y = model_base(stock_num)
     model.fit(
         train_x
         , train_y
-        , epochs=1
-        , batch_size=10
+        , epochs=60
+        , batch_size=30
         , verbose=1
         , validation_split=0.1
         , callbacks=callbacks_list
@@ -129,5 +142,5 @@ def Simple_train_model(stock_num):
     ax2.legend()
     plt.show()
 
-Simple_train_model('1')
+Simple_train_model('2')
 
